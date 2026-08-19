@@ -8,7 +8,6 @@
 
 <style>
 
-
 * {
     margin: 0;
     padding: 0;
@@ -24,25 +23,22 @@ body {
 body {
     min-height: 100vh;
     overflow: hidden;
-
-    font-family: "Georgia", serif;
-
+    font-family: Georgia, serif;
     background: #050008;
-
     color: white;
 }
 
 
+
 .login-screen {
-
     position: fixed;
-
     inset: 0;
 
     display: flex;
-
     justify-content: center;
     align-items: center;
+
+    z-index: 100;
 
     background:
         radial-gradient(
@@ -52,73 +48,54 @@ body {
             #030003 100%
         );
 
-    z-index: 100;
-
     transition:
-        opacity 1.5s ease,
-        transform 1.5s ease;
+        opacity 1.3s ease,
+        transform 1.3s ease;
 }
-
 
 .login-screen.hide {
-
     opacity: 0;
-
     pointer-events: none;
-
-    transform: scale(1.2);
+    transform: scale(1.15);
 }
 
-
 .login-box {
-
-    position: relative;
-
     width: min(90%, 400px);
 
-    padding: 45px 35px;
+    padding: 42px 32px;
 
     text-align: center;
 
     border-radius: 25px;
 
     background:
-        rgba(255,255,255,0.06);
+        rgba(255,255,255,.06);
 
     border:
-        1px solid rgba(255,150,180,0.25);
+        1px solid rgba(255,150,180,.25);
 
-    backdrop-filter:
-        blur(15px);
+    backdrop-filter: blur(15px);
 
     box-shadow:
-        0 0 40px rgba(255,20,100,0.15),
-        inset 0 0 30px rgba(255,255,255,0.03);
+        0 0 40px rgba(255,20,100,.15),
+        inset 0 0 30px rgba(255,255,255,.03);
 
-    animation:
-        appear 1.5s ease;
+    animation: appear 1.5s ease;
 }
 
-
 .login-heart {
-
     font-size: 45px;
-
     margin-bottom: 12px;
 
     filter:
         drop-shadow(0 0 10px #ff174f)
         drop-shadow(0 0 25px #ff174f);
 
-    animation:
-        heartbeat 1.5s infinite;
+    animation: heartbeat 1.5s infinite;
 }
 
-
 .login-box h1 {
-
-    font-size: 35px;
-
+    font-size: 34px;
     margin-bottom: 10px;
 
     color: #ff8fab;
@@ -127,40 +104,33 @@ body {
         0 0 20px #ff477e;
 }
 
-
 .login-box p {
-
     color: #d9aab9;
 
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 
     font-size: 14px;
-
     line-height: 1.6;
 }
 
-
 .input-group {
-
-    margin-bottom: 18px;
+    margin-bottom: 16px;
 }
 
-
 .input-group input {
-
     width: 100%;
 
     padding: 15px 18px;
 
     border:
-        1px solid rgba(255,120,160,0.3);
+        1px solid rgba(255,120,160,.3);
 
     border-radius: 12px;
 
     outline: none;
 
     background:
-        rgba(0,0,0,0.35);
+        rgba(0,0,0,.35);
 
     color: white;
 
@@ -169,36 +139,25 @@ body {
     transition: .3s;
 }
 
-
 .input-group input::placeholder {
-
     color: #a97888;
 }
 
-
 .input-group input:focus {
-
     border-color: #ff6b96;
 
     box-shadow:
         0 0 15px rgba(255,60,120,.25);
 }
 
-
 .continue-btn {
-
-    position: relative;
-
-    overflow: hidden;
-
     width: 100%;
 
     padding: 15px;
 
-    margin-top: 10px;
+    margin-top: 8px;
 
     border: none;
-
     border-radius: 12px;
 
     background:
@@ -211,7 +170,6 @@ body {
     color: white;
 
     font-size: 16px;
-
     font-weight: bold;
 
     cursor: pointer;
@@ -222,83 +180,62 @@ body {
         0 0 20px rgba(255,30,90,.3);
 }
 
-
 .continue-btn:hover {
-
-    transform:
-        translateY(-3px);
+    transform: translateY(-3px);
 
     box-shadow:
         0 0 35px rgba(255,30,90,.6);
 }
 
-
-.continue-btn:active {
-
-    transform:
-        scale(.97);
-}
-
-
 .error {
+    min-height: 18px;
+
+    margin-top: 14px;
 
     color: #ff6688;
 
     font-size: 13px;
-
-    margin-top: 15px;
-
-    min-height: 18px;
 }
 
 
 
 .love-screen {
-
     position: fixed;
-
     inset: 0;
 
     display: flex;
-
     justify-content: center;
     align-items: center;
+
+    overflow: hidden;
 
     background:
         radial-gradient(
             circle at center,
             #4a061e 0%,
-            #18000c 40%,
+            #18000c 42%,
             #040004 100%
         );
 
     opacity: 0;
-
     pointer-events: none;
 
     transition:
         opacity 1.5s ease;
-
-    overflow: hidden;
 }
 
-
 .love-screen.show {
-
     opacity: 1;
-
     pointer-events: auto;
 }
 
-
 .love-screen::before {
-
     content: "";
 
     position: absolute;
 
-    width: 600px;
-    height: 600px;
+    width: 650px;
+    height: 650px;
 
     border-radius: 50%;
 
@@ -309,37 +246,30 @@ body {
             transparent 70%
         );
 
-    filter: blur(15px);
+    filter: blur(20px);
 
     animation:
         backgroundGlow 4s ease-in-out infinite alternate;
 }
 
 
-
 .heart-container {
-
     position: absolute;
 
-    width:
-        min(90vw, 900px);
+    width: min(90vw, 900px);
+    height: min(80vh, 700px);
 
-    height:
-        min(80vh, 700px);
+    left: 50%;
+    top: 50%;
 
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
+    transform:
+        translate(-50%, -50%);
 
     animation:
         heartFloat 5s ease-in-out infinite;
 }
 
-
-
 .heart-text {
-
     position: absolute;
 
     color: #ff5c91;
@@ -348,14 +278,14 @@ body {
 
     font-weight: bold;
 
+    white-space: nowrap;
+
+    user-select: none;
+
     text-shadow:
         0 0 5px #ff174f,
         0 0 15px #ff174f,
         0 0 30px rgba(255,40,100,.8);
-
-    white-space: nowrap;
-
-    user-select: none;
 
     opacity: 0;
 
@@ -365,209 +295,170 @@ body {
 }
 
 
-@keyframes heartAppear {
 
-    0% {
-
-        opacity: 0;
-
-        transform:
-            translate(-50%, -50%)
-            scale(0);
-
-        filter:
-            blur(8px);
-    }
-
-    70% {
-
-        opacity: 1;
-
-        transform:
-            translate(-50%, -50%)
-            scale(1.2);
-
-        filter:
-            blur(0);
-    }
-
-    100% {
-
-        opacity: 1;
-
-        transform:
-            translate(-50%, -50%)
-            scale(1);
-    }
-}
-
-
-@keyframes heartGlow {
-
-    from {
-
-        opacity: .55;
-    }
-
-    to {
-
-        opacity: 1;
-    }
-}
-
-
-@keyframes heartFloat {
-
-    0%, 100% {
-
-        transform:
-            translateY(0);
-    }
-
-    50% {
-
-        transform:
-            translateY(-8px);
-    }
-}
-
-
-.love-message {
-
+.letter-card {
     position: absolute;
 
-    z-index: 20;
+    z-index: 30;
 
-    text-align: center;
+    width: min(430px, 68vw);
+    max-height: 55vh;
 
-    pointer-events: none;
+    left: 50%;
+    top: 50%;
+
+    transform:
+        translate(-50%, -50%)
+        scale(.85);
+
+    padding: 28px 30px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,248,250,.96),
+            rgba(255,232,240,.94)
+        );
+
+    color: #64152f;
+
+    box-shadow:
+        0 0 45px rgba(255,40,100,.35),
+        inset 0 0 20px rgba(255,255,255,.6);
+
+    backdrop-filter: blur(8px);
+
+    opacity: 0;
 
     animation:
-        messageAppear 3s ease forwards;
+        letterAppear 2s 2.5s ease forwards;
+
+    overflow-y: auto;
 }
 
+.letter-heart {
+    text-align: center;
 
-.small-message {
-
-    color: #ffc0d2;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 12px;
-
-    letter-spacing: 5px;
-
-    text-transform: uppercase;
+    font-size: 30px;
 
     margin-bottom: 8px;
+
+    animation:
+        heartbeat 1.5s infinite;
 }
 
+.letter-card h2 {
+    text-align: center;
 
-.main-message {
+    color: #a7194f;
 
-    color: white;
+    font-size: 25px;
 
-    font-size:
-        clamp(35px, 7vw, 75px);
-
-    font-weight: bold;
-
-    text-shadow:
-        0 0 10px #ff477e,
-        0 0 25px #ff174f,
-        0 0 55px #ff174f;
+    margin-bottom: 15px;
 }
 
-
-.sub-message {
-
-    margin-top: 12px;
-
-    color: #ffc6d7;
-
-    font-family: Arial, sans-serif;
+.letter-text {
+    color: #6d2941;
 
     font-size: 14px;
 
-    letter-spacing: 1px;
+    line-height: 1.7;
+
+    text-align: center;
+}
+
+.letter-sign {
+    margin-top: 15px;
+
+    text-align: right;
+
+    color: #a7194f;
+
+    font-style: italic;
+
+    font-size: 14px;
 }
 
 
-@keyframes messageAppear {
 
-    0% {
 
-        opacity: 0;
+.music-btn {
+    display: none;
 
-        transform:
-            scale(.5);
+    position: fixed;
 
-        filter:
-            blur(15px);
-    }
+    left: 22px;
+    bottom: 22px;
 
-    60% {
+    z-index: 100;
 
-        opacity: 1;
+    padding: 12px 18px;
 
-        transform:
-            scale(1.08);
+    border-radius: 50px;
 
-        filter:
-            blur(0);
-    }
+    border:
+        1px solid rgba(255,150,180,.25);
 
-    100% {
+    background:
+        rgba(255,255,255,.08);
 
-        opacity: 1;
+    color: #ffd2df;
 
-        transform:
-            scale(1);
-    }
+    backdrop-filter: blur(10px);
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px rgba(255,40,100,.2);
+
+    transition: .3s;
 }
+
+.music-btn:hover {
+    transform: translateY(-3px);
+
+    background:
+        rgba(255,70,120,.2);
+}
+
 
 
 .floating-heart {
-
     position: absolute;
 
     bottom: -30px;
 
     color: #ff477e;
 
-    font-size: 18px;
-
     opacity: 0;
-
-    animation:
-        floatUp linear forwards;
 
     pointer-events: none;
 
     filter:
         drop-shadow(0 0 7px #ff174f);
-}
 
+    animation:
+        floatUp linear forwards;
+}
 
 @keyframes floatUp {
 
     0% {
-
         transform:
             translateY(0)
             scale(.5)
-            rotate(0deg);
+            rotate(0);
 
         opacity: 0;
     }
 
     15% {
-
         opacity: .8;
     }
 
     100% {
-
         transform:
             translateY(-110vh)
             scale(1.3)
@@ -578,12 +469,12 @@ body {
 }
 
 
-.star {
 
+
+.star {
     position: absolute;
 
     width: 3px;
-
     height: 3px;
 
     border-radius: 50%;
@@ -594,17 +485,15 @@ body {
         0 0 8px white,
         0 0 15px #ff8eb0;
 
-    pointer-events: none;
-
     animation:
         shootingStar 2s linear forwards;
-}
 
+    pointer-events: none;
+}
 
 @keyframes shootingStar {
 
     0% {
-
         transform:
             translate(0,0);
 
@@ -612,12 +501,10 @@ body {
     }
 
     15% {
-
         opacity: 1;
     }
 
     100% {
-
         transform:
             translate(-400px,400px);
 
@@ -625,447 +512,185 @@ body {
     }
 }
 
+@keyframes heartAppear {
 
-
-.music-btn {
-
-    display: none;
-
-    position: fixed;
-
-    left: 25px;
-
-    bottom: 25px;
-
-    z-index: 50;
-
-    padding:
-        11px 17px;
-
-    border-radius: 50px;
-
-    border:
-        1px solid rgba(255,150,180,.25);
-
-    background:
-        rgba(255,255,255,.07);
-
-    color: #ffd2df;
-
-    backdrop-filter:
-        blur(10px);
-
-    cursor: pointer;
-
-    transition: .3s;
-}
-
-
-.music-btn:hover {
-
-    background:
-        rgba(255,70,120,.18);
-
-    transform:
-        translateY(-2px);
-}
-
-
-
-
-.secret-btn {
-
-    position: fixed;
-
-    right: 25px;
-
-    bottom: 25px;
-
-    z-index: 50;
-
-    padding:
-        13px 20px;
-
-    border-radius: 50px;
-
-    color: white;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,70,120,.75),
-            rgba(170,10,70,.75)
-        );
-
-    border:
-        1px solid rgba(255,180,200,.3);
-
-    box-shadow:
-        0 0 20px rgba(255,40,100,.25);
-
-    cursor: pointer;
-
-    font-family: Arial, sans-serif;
-
-    animation:
-        secretPulse 2s infinite;
-
-    transition: .3s;
-}
-
-
-.secret-btn:hover {
-
-    transform:
-        translateY(-3px)
-        scale(1.03);
-
-    box-shadow:
-        0 0 35px rgba(255,40,100,.55);
-}
-
-
-@keyframes secretPulse {
-
-    0%,100% {
-
-        box-shadow:
-            0 0 15px
-            rgba(255,40,100,.25);
-    }
-
-    50% {
-
-        box-shadow:
-            0 0 30px
-            rgba(255,40,100,.55);
-    }
-}
-
-
-
-.letter-screen {
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 200;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-
-    background:
-        rgba(5,0,5,.8);
-
-    backdrop-filter:
-        blur(12px);
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    transition:
-        .8s ease;
-}
-
-
-.letter-screen.show {
-
-    opacity: 1;
-
-    pointer-events: auto;
-}
-
-
-.letter {
-
-    position: relative;
-
-    width:
-        min(90%, 560px);
-
-    max-height: 85vh;
-
-    overflow-y: auto;
-
-    padding:
-        45px 35px;
-
-    border-radius: 25px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #fff8fa,
-            #ffe9ef
-        );
-
-    color: #601329;
-
-    box-shadow:
-        0 0 80px rgba(255,40,100,.4);
-
-    transform:
-        translateY(60px)
-        scale(.8)
-        rotateX(20deg);
-
-    transition:
-        transform 1s
-        cubic-bezier(.2,.8,.2,1);
-}
-
-
-.letter-screen.show .letter {
-
-    transform:
-        translateY(0)
-        scale(1)
-        rotateX(0);
-}
-
-
-.letter-heart {
-
-    text-align: center;
-
-    font-size: 38px;
-
-    margin-bottom: 18px;
-
-    animation:
-        heartbeat 1.5s infinite;
-}
-
-
-.letter h2 {
-
-    text-align: center;
-
-    font-size: 30px;
-
-    color: #a7194f;
-
-    margin-bottom: 22px;
-}
-
-
-.letter-text {
-
-    font-family:
-        Georgia, serif;
-
-    font-size: 16px;
-
-    line-height: 1.9;
-
-    color: #6d2941;
-
-    min-height: 180px;
-}
-
-
-.letter-sign {
-
-    margin-top: 20px;
-
-    text-align: right;
-
-    font-style: italic;
-
-    color: #a7194f;
-}
-
-
-.close-letter {
-
-    display: block;
-
-    margin:
-        25px auto 0;
-
-    padding:
-        10px 20px;
-
-    border: none;
-
-    border-radius: 30px;
-
-    background: #b51c55;
-
-    color: white;
-
-    cursor: pointer;
-
-    transition: .3s;
-}
-
-
-.close-letter:hover {
-
-    transform:
-        scale(1.05);
-}
-
-
-.unlock-particle {
-
-    position: fixed;
-
-    z-index: 200;
-
-    pointer-events: none;
-
-    color: #ff5a8a;
-
-    text-shadow:
-        0 0 15px #ff174f;
-}
-
-
-@keyframes appear {
-
-    from {
-
+    0% {
         opacity: 0;
 
         transform:
-            translateY(30px);
+            translate(-50%, -50%)
+            scale(0);
+
+        filter: blur(8px);
     }
 
-    to {
-
+    70% {
         opacity: 1;
 
         transform:
-            translateY(0);
+            translate(-50%, -50%)
+            scale(1.2);
+
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
     }
 }
 
+@keyframes heartGlow {
+
+    from {
+        opacity: .55;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes heartFloat {
+
+    0%,100% {
+        margin-top: 0;
+    }
+
+    50% {
+        margin-top: -8px;
+    }
+}
+
+@keyframes letterAppear {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(.65);
+
+        filter: blur(10px);
+    }
+
+    70% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.04);
+
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+}
 
 @keyframes heartbeat {
 
     0%,100% {
-
-        transform:
-            scale(1);
+        transform: scale(1);
     }
 
     15% {
-
-        transform:
-            scale(1.18);
+        transform: scale(1.18);
     }
 
     30% {
-
-        transform:
-            scale(1);
+        transform: scale(1);
     }
 
     45% {
-
-        transform:
-            scale(1.12);
+        transform: scale(1.12);
     }
 }
-
 
 @keyframes backgroundGlow {
 
     from {
-
         opacity: .5;
-
-        transform:
-            scale(.9);
+        transform: scale(.9);
     }
 
     to {
-
         opacity: 1;
-
-        transform:
-            scale(1.15);
+        transform: scale(1.15);
     }
 }
+
+@keyframes appear {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 
 
 
 @media (max-width: 600px) {
 
     .login-box {
-
-        padding:
-            35px 25px;
+        padding: 35px 25px;
     }
 
     .login-box h1 {
-
         font-size: 28px;
     }
 
     .login-heart {
-
         font-size: 38px;
     }
 
     .heart-text {
-
-        font-size:
-            8px !important;
+        font-size: 7px !important;
     }
 
-    .small-message {
-
-        font-size: 9px;
-
-        letter-spacing: 3px;
-    }
-
-    .sub-message {
-
-        font-size: 12px;
-    }
-
-    .music-btn {
-
-        left: 15px;
-
-        bottom: 15px;
-
-        font-size: 12px;
-    }
-
-    .secret-btn {
-
-        right: 15px;
-
-        bottom: 15px;
-
-        font-size: 12px;
+    .letter-card {
+        width: 70vw;
+        max-height: 48vh;
 
         padding:
-            11px 15px;
+            20px 18px;
     }
 
-    .letter {
-
-        padding:
-            35px 25px;
+    .letter-heart {
+        font-size: 24px;
     }
 
-    .letter h2 {
-
-        font-size: 25px;
+    .letter-card h2 {
+        font-size: 21px;
     }
 
     .letter-text {
+        font-size: 11px;
+        line-height: 1.6;
+    }
 
-        font-size: 15px;
+    .letter-sign {
+        font-size: 11px;
+    }
+
+    .music-btn {
+        left: 15px;
+        bottom: 15px;
+        font-size: 12px;
     }
 }
 
@@ -1074,6 +699,7 @@ body {
 
 
 <body>
+
 
 
 
@@ -1098,7 +724,6 @@ body {
             Maybe this one is for you.
         </p>
 
-
         <div class="input-group">
 
             <input
@@ -1110,7 +735,6 @@ body {
 
         </div>
 
-
         <div class="input-group">
 
             <input
@@ -1121,7 +745,6 @@ body {
 
         </div>
 
-
         <button
             class="continue-btn"
             id="continueBtn"
@@ -1129,7 +752,6 @@ body {
         >
             Continue ❤️
         </button>
-
 
         <div
             class="error"
@@ -1148,117 +770,62 @@ body {
     id="loveScreen"
 >
 
-
     <div
         class="heart-container"
         id="heartContainer"
-    >
-        <!-- Heart generated by JavaScript -->
-    </div>
-
-
-    <div class="love-message">
-
-        <div class="small-message">
-            This is for you
-        </div>
-
-        <div class="main-message">
-            I Love You ❤️
-        </div>
-
-        <div class="sub-message">
-            Today, tomorrow, and every day.
-        </div>
-
-    </div>
-
-
-    <!-- Fallback music button -->
-    <button
-        class="music-btn"
-        id="musicBtn"
-    >
-        🎵 Play
-    </button>
-
-
-    <!-- Secret letter -->
-    <button
-        class="secret-btn"
-        id="secretBtn"
-        onclick="openLetter()"
-    >
-        There is one more thing... 💌
-    </button>
-
-</div>
+    ></div>
 
 
 
-
-
-<div
-    class="letter-screen"
-    id="letterScreen"
->
-
-    <div class="letter">
+    <div class="letter-card">
 
         <div class="letter-heart">
             💌
         </div>
 
-
         <h2>
             For You
         </h2>
-
 
         <div
             class="letter-text"
             id="letterText"
         ></div>
 
-
         <div class="letter-sign">
             With all my love,<br>
             Thiện Nhân ❤️
         </div>
 
-
-        <button
-            class="close-letter"
-            onclick="closeLetter()"
-        >
-            Close ❤️
-        </button>
-
     </div>
 
+
+    <button
+        class="music-btn"
+        id="musicBtn"
+    >
+        🎵 Play our song
+    </button>
+
 </div>
-
-
 
 
 
 <audio
     id="loveMusic"
     loop
+    preload="auto"
 >
 
-
     <source
-        src="./music/Just The Two Of Us.mp3"
+        src="./music/love-song.mp3"
         type="audio/mpeg"
     >
 
 </audio>
 
 
-
 <script>
-
 
 
 
@@ -1292,17 +859,14 @@ function login() {
             .value
             .trim();
 
-
     const password =
         document
             .getElementById("password")
             .value;
 
-
     const error =
         document
             .getElementById("error");
-
 
     const button =
         document
@@ -1314,88 +878,23 @@ function login() {
         password === CONFIG.password
     ) {
 
-
         error.textContent = "";
-
 
         button.textContent =
             "Unlocked ❤️";
-
 
         button.style.pointerEvents =
             "none";
 
 
-        createUnlockParticles();
+        createHeart();
 
 
-        const music =
-            document
-                .getElementById("loveMusic");
+        document
+            .getElementById("loginScreen")
+            .classList
+            .add("hide");
 
-
-        music.volume = 0;
-
-
-        music.play()
-
-            .then(() => {
-
-                let volume = 0;
-
-
-                const fadeIn =
-                    setInterval(() => {
-
-                        volume += 0.03;
-
-
-                        if (volume >= 1) {
-
-                            volume = 1;
-
-                            clearInterval(
-                                fadeIn
-                            );
-
-                        }
-
-
-                        music.volume =
-                            volume;
-
-
-                    }, 100);
-
-            })
-
-            .catch(() => {
-
-
-                console.log(
-                    "Autoplay bị trình duyệt chặn."
-                );
-
-
-                document
-                    .getElementById("musicBtn")
-                    .style.display =
-                    "block";
-
-            });
-
-
-        setTimeout(() => {
-
-            document
-                .getElementById("loginScreen")
-                .classList
-                .add("hide");
-
-        }, 400);
-
-
-      
 
         setTimeout(() => {
 
@@ -1405,24 +904,21 @@ function login() {
                 .add("show");
 
 
-            createHeart();
-
-
             startFloatingHearts();
-
 
             startStars();
 
-        }, 1200);
+            startLetter();
+
+            startMusic();
+
+        }, 900);
 
 
     } else {
 
-
         error.textContent =
             "The username or the password is incorrect ❤️";
-
-
 
 
         const box =
@@ -1431,49 +927,25 @@ function login() {
 
 
         box.animate(
-
             [
-                {
-                    transform:
-                        "translateX(0)"
-                },
-
-                {
-                    transform:
-                        "translateX(-8px)"
-                },
-
-                {
-                    transform:
-                        "translateX(8px)"
-                },
-
-                {
-                    transform:
-                        "translateX(-5px)"
-                },
-
-                {
-                    transform:
-                        "translateX(5px)"
-                },
-
-                {
-                    transform:
-                        "translateX(0)"
-                }
-
+                { transform: "translateX(0)" },
+                { transform: "translateX(-8px)" },
+                { transform: "translateX(8px)" },
+                { transform: "translateX(-5px)" },
+                { transform: "translateX(5px)" },
+                { transform: "translateX(0)" }
             ],
-
             {
                 duration: 450
             }
-
         );
 
     }
 
 }
+
+
+/* ENTER KEY */
 
 document
     .getElementById("password")
@@ -1482,13 +954,12 @@ document
         function(e) {
 
             if (e.key === "Enter") {
-
                 login();
-
             }
 
         }
     );
+
 
 
 function createHeart() {
@@ -1496,7 +967,6 @@ function createHeart() {
     const container =
         document
             .getElementById("heartContainer");
-
 
     container.innerHTML = "";
 
@@ -1507,18 +977,12 @@ function createHeart() {
             400
         );
 
-
     const heartHeight =
         Math.min(
             window.innerHeight * 0.38,
             280
         );
 
-
-    /*
-       Giữ nguyên 650 chữ như code ban đầu
-       trên desktop.
-    */
 
     const count =
         window.innerWidth < 600
@@ -1532,13 +996,10 @@ function createHeart() {
         i++
     ) {
 
-
         const t =
             Math.random()
-            *
-            Math.PI
-            *
-            2;
+            * Math.PI
+            * 2;
 
 
         const scale =
@@ -1546,10 +1007,6 @@ function createHeart() {
                 Math.random()
             );
 
-
-        /*
-           CÔNG THỨC TRÁI TIM GỐC
-        */
 
         let x =
             16 *
@@ -1573,18 +1030,15 @@ function createHeart() {
 
 
         x *= scale;
-
         y *= scale;
 
 
         const span =
-            document
-                .createElement("span");
+            document.createElement("span");
 
 
         span.className =
             "heart-text";
-
 
 
         span.textContent =
@@ -1593,15 +1047,13 @@ function createHeart() {
 
         const fontSize =
             window.innerWidth < 600
-                ? 8
+                ? 7
                 : 10;
 
 
         span.style.fontSize =
-            fontSize
-            +
-            Math.random() * 3
-            +
+            fontSize +
+            Math.random() * 3 +
             "px";
 
 
@@ -1624,25 +1076,189 @@ function createHeart() {
 
 
         span.style.animationDelay =
-            Math.random() * 2
-            +
+            Math.random() * 2 +
             "s";
 
 
-        container.appendChild(
-            span
-        );
+        container.appendChild(span);
 
     }
 
 }
 
 
+function startLetter() {
+
+    const element =
+        document
+            .getElementById("letterText");
+
+
+    element.textContent = "";
+
+
+    typeWriter(
+        CONFIG.letter,
+        element,
+        22
+    );
+
+}
+
+
+function typeWriter(
+    text,
+    element,
+    speed
+) {
+
+    let index = 0;
+
+
+    function type() {
+
+        if (
+            index <
+            text.length
+        ) {
+
+            element.textContent +=
+                text.charAt(index);
+
+            index++;
+
+            setTimeout(
+                type,
+                speed
+            );
+
+        }
+
+    }
+
+
+    type();
+
+}
+
+
+function startMusic() {
+
+    const music =
+        document
+            .getElementById("loveMusic");
+
+    const button =
+        document
+            .getElementById("musicBtn");
+
+
+    music.volume = 0;
+
+
+    music.play()
+        .then(() => {
+
+            console.log(
+                "🎵 Music started!"
+            );
+
+
+            button.style.display =
+                "none";
+
+
+            let volume = 0;
+
+
+            const fadeIn =
+                setInterval(() => {
+
+                    volume += 0.03;
+
+
+                    if (volume >= 1) {
+
+                        volume = 1;
+
+                        clearInterval(
+                            fadeIn
+                        );
+
+                    }
+
+
+                    music.volume =
+                        volume;
+
+
+                }, 100);
+
+        })
+        .catch((error) => {
+
+            console.log(
+                "Autoplay bị chặn:",
+                error
+            );
+
+
+            button.style.display =
+                "block";
+
+
+            button.textContent =
+                "🎵 Play our song";
+
+        });
+
+}
+
+
+/* MUSIC BUTTON */
+
+document
+    .getElementById("musicBtn")
+    .addEventListener(
+        "click",
+        () => {
+
+            const music =
+                document
+                    .getElementById("loveMusic");
+
+
+            music.volume = 1;
+
+
+            music.play()
+                .then(() => {
+
+                    document
+                        .getElementById("musicBtn")
+                        .textContent =
+                        "🔊 Playing...";
+
+
+                    setTimeout(() => {
+
+                        document
+                            .getElementById("musicBtn")
+                            .style.display =
+                            "none";
+
+                    }, 1200);
+
+                });
+
+        }
+    );
+
+
 function createFloatingHeart() {
 
     const heart =
-        document
-            .createElement("div");
+        document.createElement("div");
 
 
     heart.className =
@@ -1656,24 +1272,19 @@ function createFloatingHeart() {
 
 
     heart.style.left =
-        Math.random() * 100
-        +
+        Math.random() * 100 +
         "vw";
 
 
     heart.style.fontSize =
-        12
-        +
-        Math.random() * 25
-        +
+        12 +
+        Math.random() * 25 +
         "px";
 
 
     heart.style.animationDuration =
-        5
-        +
-        Math.random() * 7
-        +
+        5 +
+        Math.random() * 7 +
         "s";
 
 
@@ -1701,11 +1312,11 @@ function startFloatingHearts() {
 
 
 
+
 function createStar() {
 
     const star =
-        document
-            .createElement("div");
+        document.createElement("div");
 
 
     star.className =
@@ -1713,14 +1324,12 @@ function createStar() {
 
 
     star.style.left =
-        Math.random() * 100
-        +
+        Math.random() * 100 +
         "vw";
 
 
     star.style.top =
-        Math.random() * 55
-        +
+        Math.random() * 55 +
         "vh";
 
 
@@ -1747,274 +1356,11 @@ function startStars() {
 }
 
 
-function createUnlockParticles() {
-
-    const screen =
-        document
-            .getElementById("loginScreen");
-
-
-    for (
-        let i = 0;
-        i < 35;
-        i++
-    ) {
-
-
-        const particle =
-            document
-                .createElement("div");
-
-
-        particle.className =
-            "unlock-particle";
-
-
-        particle.textContent =
-            Math.random() > .5
-                ? "♥"
-                : "✦";
-
-
-        particle.style.left =
-            "50%";
-
-
-        particle.style.top =
-            "50%";
-
-
-        particle.style.fontSize =
-            10
-            +
-            Math.random() * 20
-            +
-            "px";
-
-
-        const angle =
-            Math.random()
-            *
-            Math.PI
-            *
-            2;
-
-
-        const distance =
-            100
-            +
-            Math.random() * 300;
-
-
-        particle.animate(
-
-            [
-
-                {
-                    transform:
-                        "translate(-50%,-50%) scale(0)",
-
-                    opacity: 0
-
-                },
-
-                {
-
-                    transform:
-                        "translate(-50%,-50%) scale(1)",
-
-                    opacity: 1
-
-                },
-
-                {
-
-                    transform:
-                        `
-                        translate(
-                            calc(
-                                -50% +
-                                ${Math.cos(angle) * distance}px
-                            ),
-                            calc(
-                                -50% +
-                                ${Math.sin(angle) * distance}px
-                            )
-                        )
-                        scale(0)
-                        `,
-
-                    opacity: 0
-
-                }
-
-            ],
-
-            {
-
-                duration:
-                    900
-                    +
-                    Math.random() * 700,
-
-                easing:
-                    "cubic-bezier(.2,.8,.2,1)"
-
-            }
-
-        );
-
-
-        screen.appendChild(
-            particle
-        );
-
-
-        setTimeout(
-            () => particle.remove(),
-            1800
-        );
-
-    }
-
-}
-
-
-
-
-function openLetter() {
-
-    const screen =
-        document
-            .getElementById("letterScreen");
-
-
-    const text =
-        document
-            .getElementById("letterText");
-
-
-    screen
-        .classList
-        .add("show");
-
-
-    text.textContent =
-        "";
-
-
-    typeWriter(
-        CONFIG.letter,
-        text,
-        25
-    );
-
-}
-
-
-function closeLetter() {
-
-    document
-        .getElementById("letterScreen")
-        .classList
-        .remove("show");
-
-}
-
-
-
-function typeWriter(
-    message,
-    element,
-    speed
-) {
-
-    let index = 0;
-
-
-    function type() {
-
-        if (
-            index <
-            message.length
-        ) {
-
-
-            element.textContent +=
-                message.charAt(index);
-
-
-            index++;
-
-
-            setTimeout(
-                type,
-                speed
-            );
-
-        }
-
-    }
-
-
-    type();
-
-}
-
-
-document
-    .getElementById("musicBtn")
-    .addEventListener(
-        "click",
-        () => {
-
-
-            const music =
-                document
-                    .getElementById("loveMusic");
-
-
-            if (music.paused) {
-
-
-                music.volume = 1;
-
-
-                music.play()
-                    .then(() => {
-
-                        document
-                            .getElementById("musicBtn")
-                            .textContent =
-                            "🔊 Playing...";
-
-                    });
-
-
-            } else {
-
-
-                music.pause();
-
-
-                document
-                    .getElementById("musicBtn")
-                    .textContent =
-                    "🎵 Play our song";
-
-            }
-
-        }
-    );
-
-
 let resizeTimer;
-
 
 window.addEventListener(
     "resize",
     () => {
-
 
         clearTimeout(
             resizeTimer
@@ -2025,21 +1371,7 @@ window.addEventListener(
             setTimeout(
                 () => {
 
-
-                    const loveScreen =
-                        document
-                            .getElementById("loveScreen");
-
-
-                    if (
-                        loveScreen
-                            .classList
-                            .contains("show")
-                    ) {
-
-                        createHeart();
-
-                    }
+                    createHeart();
 
                 },
                 300
@@ -2052,4 +1384,3 @@ window.addEventListener(
 
 </body>
 </html>
-
